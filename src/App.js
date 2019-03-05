@@ -3,22 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super();
+    this.state={times:0}
+  }
+  timesPlus(){
+    let times=this.state.times
+    times++
+    this.setState({times:times})
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="setState">
+        <header className="extends">
+          <a href="#" onClick={this.timesPlus.bind(this)}>点我一下试试</a>
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            你点了我{this.state.times}次
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );
